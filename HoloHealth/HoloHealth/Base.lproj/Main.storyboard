@@ -5,27 +5,58 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="HoloHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rqn-u6-GbO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="528"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME1-7r-336">
+                                <rect key="frame" x="0.0" y="536" width="375" height="82"/>
+                                <color key="backgroundColor" red="1" green="0.95653883500000003" blue="0.86476685050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="gAH-yr-lsv"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <action selector="save:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HFZ-nh-ybn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ME1-7r-336" firstAttribute="top" secondItem="rqn-u6-GbO" secondAttribute="bottom" constant="8" symbolic="YES" id="20h-8H-zPk"/>
+                            <constraint firstItem="rqn-u6-GbO" firstAttribute="leading" secondItem="ME1-7r-336" secondAttribute="leading" id="7q8-mg-TNQ"/>
+                            <constraint firstItem="rqn-u6-GbO" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="aXF-vV-PrQ"/>
+                            <constraint firstItem="rqn-u6-GbO" firstAttribute="trailing" secondItem="ME1-7r-336" secondAttribute="trailing" id="baU-5T-Tjp"/>
+                            <constraint firstItem="rqn-u6-GbO" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="e7j-Ig-54s"/>
+                            <constraint firstAttribute="trailing" secondItem="rqn-u6-GbO" secondAttribute="trailing" id="g1C-FC-QBt"/>
+                            <constraint firstItem="ME1-7r-336" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="jpZ-dY-Y7S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="first" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="Display" destination="rqn-u6-GbO" id="ixr-Ld-QQM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="HoloHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,67 +64,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ca-cp-k8L">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ca-cp-k8L">
                                 <rect key="frame" x="16" y="20" width="160" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U58-vS-3OP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U58-vS-3OP">
                                 <rect key="frame" x="206" y="28" width="153" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kl-WM-eLM">
-                                <rect key="frame" x="206" y="90" width="36" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kl-WM-eLM">
+                                <rect key="frame" x="206" y="90" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blood Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDA-eJ-cyx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDA-eJ-cyx">
                                 <rect key="frame" x="203" y="159" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other Health Problems:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSQ-HU-E6P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Health Problems:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSQ-HU-E6P">
                                 <rect key="frame" x="16" y="204" width="180" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lKi-Av-7Lj">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lKi-Av-7Lj">
                                 <rect key="frame" x="16" y="233" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="sKb-On-79a"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Prescriptions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1z-5b-FHX">
+                                <rect key="frame" x="16" y="378" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CXe-gb-q6L">
+                                <rect key="frame" x="16" y="407" width="343" height="202"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Old Prescriptions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1z-5b-FHX">
-                                <rect key="frame" x="16" y="378" width="137" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mDA-eJ-cyx" firstAttribute="leading" secondItem="2Ca-cp-k8L" secondAttribute="trailing" constant="27" id="00f-wJ-nWJ"/>
+                            <constraint firstItem="U58-vS-3OP" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="0L1-QR-GzU"/>
+                            <constraint firstItem="7Kl-WM-eLM" firstAttribute="top" secondItem="U58-vS-3OP" secondAttribute="bottom" constant="13" id="2FF-oI-8GE"/>
+                            <constraint firstItem="7Kl-WM-eLM" firstAttribute="trailing" secondItem="lKi-Av-7Lj" secondAttribute="trailing" id="Ez0-pF-Rod"/>
+                            <constraint firstItem="lKi-Av-7Lj" firstAttribute="trailing" secondItem="CXe-gb-q6L" secondAttribute="trailing" id="FVu-nq-Kw5"/>
+                            <constraint firstItem="lKi-Av-7Lj" firstAttribute="top" secondItem="aSQ-HU-E6P" secondAttribute="bottom" constant="8" symbolic="YES" id="PE3-BL-Xqi"/>
+                            <constraint firstItem="U58-vS-3OP" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="PEa-YE-7UE"/>
+                            <constraint firstItem="U58-vS-3OP" firstAttribute="leading" secondItem="2Ca-cp-k8L" secondAttribute="trailing" constant="30" id="Qd6-Fj-NIf"/>
+                            <constraint firstItem="aSQ-HU-E6P" firstAttribute="top" secondItem="2Ca-cp-k8L" secondAttribute="bottom" constant="24" id="Wfw-jw-5d7"/>
+                            <constraint firstItem="U58-vS-3OP" firstAttribute="trailing" secondItem="7Kl-WM-eLM" secondAttribute="trailing" id="WoR-Rd-EYI"/>
+                            <constraint firstItem="lKi-Av-7Lj" firstAttribute="leading" secondItem="X1z-5b-FHX" secondAttribute="leading" id="XVS-rn-8km"/>
+                            <constraint firstItem="U58-vS-3OP" firstAttribute="leading" secondItem="7Kl-WM-eLM" secondAttribute="leading" id="Zgb-2o-6vk"/>
+                            <constraint firstItem="aSQ-HU-E6P" firstAttribute="leading" secondItem="lKi-Av-7Lj" secondAttribute="leading" id="d0b-As-LKw"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="mDA-eJ-cyx" secondAttribute="trailing" constant="86" id="d2h-ti-XdO"/>
+                            <constraint firstItem="CXe-gb-q6L" firstAttribute="top" secondItem="X1z-5b-FHX" secondAttribute="bottom" constant="8" symbolic="YES" id="ds0-k5-Nos"/>
+                            <constraint firstItem="2Ca-cp-k8L" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="gGF-RE-0RU"/>
+                            <constraint firstItem="X1z-5b-FHX" firstAttribute="top" secondItem="lKi-Av-7Lj" secondAttribute="bottom" constant="17" id="nSt-Oc-6B7"/>
+                            <constraint firstItem="2Ca-cp-k8L" firstAttribute="leading" secondItem="aSQ-HU-E6P" secondAttribute="leading" id="oQl-5z-wEt"/>
+                            <constraint firstItem="mDA-eJ-cyx" firstAttribute="top" secondItem="7Kl-WM-eLM" secondAttribute="bottom" constant="48" id="p6N-QN-TlA"/>
+                            <constraint firstItem="2Ca-cp-k8L" firstAttribute="centerY" secondItem="7Kl-WM-eLM" secondAttribute="centerY" id="qx7-8G-1tD"/>
+                            <constraint firstItem="X1z-5b-FHX" firstAttribute="leading" secondItem="CXe-gb-q6L" secondAttribute="leading" id="rIo-fo-3ut"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="CXe-gb-q6L" secondAttribute="bottom" constant="9" id="xuN-Wi-4c7"/>
+                            <constraint firstItem="2Ca-cp-k8L" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="ywe-Nn-76T"/>
+                            <constraint firstItem="2Ca-cp-k8L" firstAttribute="bottom" secondItem="mDA-eJ-cyx" secondAttribute="bottom" id="zcY-R0-BMU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="second" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
-        <!--Item-->
+        <!--Third View Controller-->
         <scene sceneID="edK-zf-RRe">
             <objects>
-                <viewController id="vHa-NQ-AFh" sceneMemberID="viewController">
+                <viewController id="vHa-NQ-AFh" customClass="ThirdViewController" customModule="HoloHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="32A-wM-JbE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,16 +168,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="36r-Vy-U0o"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dok-Vg-HUe"/>
+                    <tabBarItem key="tabBarItem" title="" image="third" selectedImage="third" id="dok-Vg-HUe">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="map" destination="PVa-f5-AyT" id="WGj-Yv-EQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0I-wV-3yV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="1051.1244377811095"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbed View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabbedViewController" customModule="HoloHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -133,7 +200,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="first" width="50" height="50"/>
+        <image name="second" width="50" height="50"/>
+        <image name="third" width="50" height="50"/>
     </resources>
 </document>

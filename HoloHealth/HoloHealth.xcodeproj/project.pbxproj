@@ -13,6 +13,9 @@
 		C20DD8FE1F92D40F005FEEA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20DD8FC1F92D40F005FEEA8 /* Main.storyboard */; };
 		C20DD9001F92D40F005FEEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20DD8FF1F92D40F005FEEA8 /* Assets.xcassets */; };
 		C20DD9031F92D40F005FEEA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20DD9011F92D40F005FEEA8 /* LaunchScreen.storyboard */; };
+		C20DD90B1F92D8B4005FEEA8 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20DD90A1F92D8B4005FEEA8 /* TabbedViewController.swift */; };
+		C20DD90E1F92FB30005FEEA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20DD90D1F92FB30005FEEA8 /* CoreLocation.framework */; };
+		C20DD9101F92FB84005FEEA8 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20DD90F1F92FB84005FEEA8 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C20DD8FF1F92D40F005FEEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C20DD9021F92D40F005FEEA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C20DD9041F92D40F005FEEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C20DD90A1F92D8B4005FEEA8 /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
+		C20DD90D1F92FB30005FEEA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C20DD90F1F92FB84005FEEA8 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20DD90E1F92FB30005FEEA8 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,7 @@
 			children = (
 				C20DD8F51F92D40F005FEEA8 /* HoloHealth */,
 				C20DD8F41F92D40F005FEEA8 /* Products */,
+				C20DD90C1F92FB2F005FEEA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +71,18 @@
 				C20DD8FF1F92D40F005FEEA8 /* Assets.xcassets */,
 				C20DD9011F92D40F005FEEA8 /* LaunchScreen.storyboard */,
 				C20DD9041F92D40F005FEEA8 /* Info.plist */,
+				C20DD90A1F92D8B4005FEEA8 /* TabbedViewController.swift */,
+				C20DD90F1F92FB84005FEEA8 /* ThirdViewController.swift */,
 			);
 			path = HoloHealth;
+			sourceTree = "<group>";
+		};
+		C20DD90C1F92FB2F005FEEA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C20DD90D1F92FB30005FEEA8 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +159,8 @@
 			files = (
 				C20DD8FB1F92D40F005FEEA8 /* SecondViewController.swift in Sources */,
 				C20DD8F71F92D40F005FEEA8 /* AppDelegate.swift in Sources */,
+				C20DD9101F92FB84005FEEA8 /* ThirdViewController.swift in Sources */,
+				C20DD90B1F92D8B4005FEEA8 /* TabbedViewController.swift in Sources */,
 				C20DD8F91F92D40F005FEEA8 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NWZUJX4ELY;
 				INFOPLIST_FILE = HoloHealth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smoto.HoloHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -296,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NWZUJX4ELY;
 				INFOPLIST_FILE = HoloHealth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smoto.HoloHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
